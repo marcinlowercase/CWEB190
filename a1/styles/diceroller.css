@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/*
+ Filename:    diceroller.css
+ Author:      YOURNAME (cstYOURNUMBER)
+ Course:      CWEB 190 (Internet Programming/Web Applications 1)
+ Instructor:  Michael Grzesina
+ Date:
+ Purpose:     
+ */
+
+#image1, #image2, #image3, #image4, #image5 {
+    height: 100px;
+    width: 100px;
+}
+
+#tblStats td {
+    text-align: center;
+}
