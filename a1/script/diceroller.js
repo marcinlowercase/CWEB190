@@ -1,5 +1,7 @@
 "use strict"
 
+// NAME: TRAN, NGUYEN HONG THAI
+
 // Variables
 let numberOfDice = window.prompt("How many dice should be rolled? (1-5)", "");
 let dices = [numberOfDice];
