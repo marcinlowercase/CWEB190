@@ -30,51 +30,9 @@ function getInput(s){
     }
 }
 function isValid(s){
-    if (!isNaN(parseInt(s))){
-        return true;
-    } else {
-        return false;
-    }
+    return !isNaN(parseInt(s));
 }
 function createTable(tblStats, numberOfDice, previousRollArray, pTotalRolls){
-    function roll(){
-        for ( let i = 0; i < numberOfDice; i++){
-            dices[i] = Math.floor((Math.random() * 6) + 1);
-        }
-    }          
-    function printImage(diceArea, dices){
-    
-        diceArea.innerHTML = '';
-    
-        let string = '';
-    
-        for (let i = 0; i < dices.length; i++){
-            switch(dices[i]){
-            
-                case 1:
-                    string += '<img id="image' + (i + 1) + '" src="images/dice1.png" />';
-                    break;
-                case 2:
-                    string += '<img id="image' + (i + 1) + '" src="images/dice2.png" />'
-                    break;
-                case 3:
-                    string += '<img id="image' + (i + 1) + '" src="images/dice3.png" />'
-                    break;
-                case 4:
-                    string += '<img id="image' + (i + 1) + '" src="images/dice4.png" />'
-                    break;
-                case 5:
-                    string += '<img id="image' + (i + 1) + '" src="images/dice5.png" />'
-                    break;
-                case 6:
-                    string += '<img id="image' + (i + 1) + '" src="images/dice6.png" />'
-                    break;
-                default:
-                    break;
-            }
-        }
-        diceArea.innerHTML = string;
-    }
     pTotalRolls.innerHTML = '';
     pTotalRolls.innerHTML = 'My statistics for a total of ' + previousRollArray.length + ' rolls:'
     
@@ -104,22 +62,22 @@ function printImage(diceArea, dices){
         switch(dices[i]){
         
             case 1:
-                string += '<img id="image' + (i + 1) + '" src="images/dice1.png" />';
+                string += '<img id="image' + (i + 1) + '" src="images/dice1.png" alt="dice' + (i + 1) +'" />';
                 break;
             case 2:
-                string += '<img id="image' + (i + 1) + '" src="images/dice2.png" />'
+                string += '<img id="image' + (i + 1) + '" src="images/dice2.png" alt="dice' + (i + 1) +'" />'
                 break;
             case 3:
-                string += '<img id="image' + (i + 1) + '" src="images/dice3.png" />'
+                string += '<img id="image' + (i + 1) + '" src="images/dice3.png" alt="dice' + (i + 1) +'" />'
                 break;
             case 4:
-                string += '<img id="image' + (i + 1) + '" src="images/dice4.png" />'
+                string += '<img id="image' + (i + 1) + '" src="images/dice4.png" alt="dice' + (i + 1) +'" />'
                 break;
             case 5:
-                string += '<img id="image' + (i + 1) + '" src="images/dice5.png" />'
+                string += '<img id="image' + (i + 1) + '" src="images/dice5.png" alt="dice' + (i + 1) +'" />'
                 break;
             case 6:
-                string += '<img id="image' + (i + 1) + '" src="images/dice6.png" />'
+                string += '<img id="image' + (i + 1) + '" src="images/dice6.png" alt="dice' + (i + 1) +'" />'
                 break;
             default:
                 break;
@@ -189,7 +147,7 @@ createTable(tblStats, numberOfDice, previousRollArray, pTotalRolls);
 setInterval(roll, 100);
 
 ///PLAY
-btnRoll.addEventListener('click', e => {
+btnRoll.addEventListener('click', () => {
     btnRoll.disabled = true;
     setTimeout(rollOneTime, 1000);   
 })
