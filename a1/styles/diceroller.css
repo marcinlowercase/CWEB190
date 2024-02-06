@@ -9,12 +9,7 @@
  Purpose:     
  */
 
-/* #image1, #image2, #image3, #image4, #image5 {
-    height: 100px;
-    width: 100px;
-} */
-
-#diceArea img {
+#image1, #image2, #image3, #image4, #image5 {
     height: 100px;
     width: 100px;
 }
